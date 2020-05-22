@@ -7,6 +7,8 @@ import sys
 
 from loguru import logger
 
+__all__ = ["InterceptHandler", "loguru_setup", "setup_command_loguru"]
+
 
 class InterceptHandler(logging.Handler):
     def emit(self, record):

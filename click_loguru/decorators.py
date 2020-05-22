@@ -8,6 +8,8 @@ from typing import Callable
 
 import click
 
+__all__ = ["verbosity_multi_decorator"]
+
 
 def verbosity_multi_decorator(func: Callable):
     """
@@ -34,5 +36,3 @@ def verbosity_multi_decorator(func: Callable):
                      count=True,
                      help='Decrease logging verbosity. Can be repeated to decrease verbosity even more.')
     )(func)
-
-
