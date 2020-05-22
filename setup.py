@@ -6,15 +6,16 @@ import io
 from setuptools import setup
 
 setup(
-    name='click-loguru',
+    name='click-loguru-decorators',
     version='0.1.0',
     description="""Easy integration of Click and loguru""",
-    long_description=io.open("README.rst", 'r', encoding="utf-8").read(),
-    url='https://github.com/illagrenan/click-loguru',
+    long_description=io.open("README.md", 'r', encoding="utf-8").read(),
+    long_description_content_type='text/markdown',
+    url='https://github.com/illagrenan/click-loguru-decorators',
     license='MIT',
     author='Vasek Dohnal',
     author_email='vaclav.dohnal@gmail.com',
-    packages=['block_timer'],
+    packages=['click_loguru'],
     install_requires=['loguru', 'Click'],
     python_requires='~=3.8',
     include_package_data=True,
