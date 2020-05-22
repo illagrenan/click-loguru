@@ -4,6 +4,7 @@
 import functools
 import logging
 import sys
+from typing import NoReturn
 
 from loguru import logger
 
@@ -18,7 +19,7 @@ class InterceptHandler(logging.Handler):
         logger_opt.log(record.levelno, record.getMessage())
 
 
-def loguru_setup(quiet, verbose):
+def loguru_setup(quiet, verbose) -> NoReturn:
     logger.remove()
     logging.basicConfig(handlers=[InterceptHandler()], level=0)
     logger.add(sys.stderr, level=max(logging.WARNING + (quiet - verbose), logging.NOTSET))
