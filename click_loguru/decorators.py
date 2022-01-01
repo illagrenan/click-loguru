@@ -31,19 +31,13 @@ def verbosity_multi_decorator(func: Callable):
             "--verbose",
             callback=lambda ctx, param, value: value * 10,
             count=True,
-            help=(
-                "Increase logging verbosity. Can be repeated to increase verbosity even"
-                " more."
-            ),
+            help="Increase logging verbosity. Can be repeated to increase verbosity even more.",
         ),
         click.option(
             "-q",
             "--quiet",
             callback=lambda ctx, param, value: value * 10,
             count=True,
-            help=(
-                "Decrease logging verbosity. Can be repeated to decrease verbosity even"
-                " more."
-            ),
+            help="Decrease logging verbosity. Can be repeated to decrease verbosity even more.",
         ),
     )(func)
