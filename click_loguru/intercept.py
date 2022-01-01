@@ -6,7 +6,6 @@ from __future__ import annotations
 import functools
 import logging
 import sys
-from typing import NoReturn
 
 from loguru import logger
 
@@ -34,7 +33,7 @@ class InterceptHandler(logging.Handler):
         )
 
 
-def loguru_setup(quiet, verbose) -> NoReturn:
+def loguru_setup(quiet, verbose) -> None:
     logger.remove()
     logging.basicConfig(handlers=[InterceptHandler()], level=0)
     logger.add(
