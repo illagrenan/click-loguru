@@ -2,7 +2,6 @@
 # ! python3
 
 from __future__ import annotations
-from __future__ import generator_stop
 
 from typing import Callable
 
@@ -27,12 +26,24 @@ def verbosity_multi_decorator(func: Callable):
         return deco
 
     return _composed(
-        click.option('-v', '--verbose',
-                     callback=lambda ctx, param, value: value * 10,
-                     count=True,
-                     help='Increase logging verbosity. Can be repeated to increase verbosity even more.'),
-        click.option('-q', '--quiet',
-                     callback=lambda ctx, param, value: value * 10,
-                     count=True,
-                     help='Decrease logging verbosity. Can be repeated to decrease verbosity even more.')
+        click.option(
+            "-v",
+            "--verbose",
+            callback=lambda ctx, param, value: value * 10,
+            count=True,
+            help=(
+                "Increase logging verbosity. Can be repeated to increase verbosity even"
+                " more."
+            ),
+        ),
+        click.option(
+            "-q",
+            "--quiet",
+            callback=lambda ctx, param, value: value * 10,
+            count=True,
+            help=(
+                "Decrease logging verbosity. Can be repeated to decrease verbosity even"
+                " more."
+            ),
+        ),
     )(func)
