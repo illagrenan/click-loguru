@@ -16,7 +16,7 @@ click = "^8.0.3"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
-black = "^21.12b0"
+black = "^24.3"
 devtools = "^0.8.0"
 
 [build-system]
